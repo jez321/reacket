@@ -19,6 +19,30 @@ test('renders without error', () => {
   expect(wrapper).toBeTruthy();
 });
 
+test('renders correct rounder header for normal round', () => {
+  const wrapper = setup({
+    round: 2,
+    totalRounds: 5,
+  });
+  expect(wrapper.find('.round-header').text()).toEqual('Round 2');
+});
+
+test('renders correct rounder header for semi-finals', () => {
+  const wrapper = setup({
+    round: 4,
+    totalRounds: 5,
+  });
+  expect(wrapper.find('.round-header').text()).toEqual('Semi-finals');
+});
+
+test('renders correct rounder header for finals', () => {
+  const wrapper = setup({
+    round: 5,
+    totalRounds: 5,
+  });
+  expect(wrapper.find('.round-header').text()).toEqual('Finals');
+});
+
 test('does not throw warning with expected props', () => {
   TestUtil.checkProps(RoundHeader, defaultProps);
 });
