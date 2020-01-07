@@ -12,16 +12,16 @@ const Connector = ({ round }) => {
 
   for (let i = 0; i < rightLines; i += 1) {
     if (i > 0) {
-      rightElements.push(<Spacer key={`${i}-s`} height={2} />);
+      rightElements.push(<Spacer key={`${round}-${i}-s`} height={2} />);
     }
-    rightElements.push(<div key={`${i}-l`} className="horizontal-line" />);
+    rightElements.push(<div key={`${round}-${i}-l`} className="horizontal-line" />);
   }
 
   for (let i = 0; i < leftLines; i += 1) {
     if (i % 2) {
-      leftElements.push(<Spacer key={`${i}-s`} line height={2} />);
+      leftElements.push(<Spacer key={`${round}-${i}-s`} line height={2} />);
     } else if (i > 0) {
-      leftElements.push(<Spacer key={`${i}-s`} height={2} />);
+      leftElements.push(<Spacer key={`${round}-${i}-s`} height={2} />);
     }
     leftElements.push(<div key={`${i}-l`} className="horizontal-line" />);
   }
@@ -29,14 +29,14 @@ const Connector = ({ round }) => {
   return (
     <div className="connectors">
       <div className="connector">
-        <Spacer />
+        <Spacer key={`${round}-l-t`} />
         {leftElements}
-        <Spacer />
+        <Spacer key={`${round}-l-b`} />
       </div>
       <div className="connector">
-        <Spacer />
+        <Spacer key={`${round}-r-t`} />
         {rightElements}
-        <Spacer />
+        <Spacer key={`${round}-r-b`} />
       </div>
     </div>
   );

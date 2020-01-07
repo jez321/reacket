@@ -24,7 +24,7 @@ const Reacket = ({ matches }) => {
         {rounds.map((round) => {
           const jsx = [];
           jsx.push(
-            <RoundHeader round={round.round} totalRounds={rounds.length} />,
+            <RoundHeader key={`${round}-header`} round={round.round} totalRounds={rounds.length} />,
           );
           return jsx;
         })}
