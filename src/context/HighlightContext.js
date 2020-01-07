@@ -2,7 +2,7 @@ import React from 'react';
 
 const HighlightContext = React.createContext({
   highlightedPlayer: null,
-  setHightlightedPlayer: () => {}
+  setHightlightedPlayer: () => { },
 });
 
 export default HighlightContext;
