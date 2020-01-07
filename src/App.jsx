@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.scss';
-import Reacket from './components/reacket/reacket.component';
-const data = require('./data/testData.json');
+import Reacket from './components/Reacket/Reacket.component';
+
+const matches = require('./data/testData.json');
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <h1>Tournament bracket</h1>
       </header>
       <main>
-        <Reacket data={data} />
+        <Reacket matches={matches} />
       </main>
     </div>
   );
