@@ -13,10 +13,10 @@ const Match = ({
         {id}
       </div>
       <div className="players">
-        {players.map(({ name, playerId = id, seed }, index) => (
+        {players.map(({ name, seed, ...player }, index) => (
           <Player
-            key={playerId}
-            id={playerId}
+            key={player.id}
+            id={player.id}
             name={name}
             seed={seed}
             score={score[index]}
