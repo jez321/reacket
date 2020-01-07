@@ -1,0 +1,15 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 2rem;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}

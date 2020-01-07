@@ -1,0 +1,70 @@
+$backgroundColor: #f6f6f6;
+$lightTextColor: #999;
+$darkTextColor: #333;
+$reverseTextColor: white;
+$loserBorder: solid 0.2rem $lightTextColor;
+$winnerTextColor: rgb(15, 172, 15);
+$reverseWinnerTextColor:  rgb(142, 233, 142);
+$winnerBorder: solid 0.2rem $winnerTextColor;
+$winnerBackgroundColor: #ebfaeb;
+$highlightedBackgroundColor: #255d85;
+$highlightedBorder:solid 0.2rem #1d8cd6;
+$playerSeperatorBorder: solid 1px #ccc;;
+
+
+.player {
+  padding: 0.5rem 0;
+  background: $backgroundColor;
+  border-left: $loserBorder;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+  display: flex;
+  justify-content: space-between;
+
+  .player-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: left;
+    flex:1 1 auto; 
+    color: $lightTextColor;
+  }
+  .player-seed, .player-score {
+    flex:0 0 auto;
+    padding: 0 1rem;
+    color: $lightTextColor;
+  }
+
+
+  &.winner {
+    background-color: $winnerBackgroundColor;
+    border-left: $winnerBorder;
+    .player-score {
+      font-weight:bold;
+      color: $winnerTextColor;
+    }
+    .player-name {
+      color: $darkTextColor;
+    }
+    &.highlighted {
+      .player-score {
+        color: $reverseWinnerTextColor;
+      }
+      .player-name {
+        color: $reverseTextColor;
+      }
+    }
+  }
+
+  &.highlighted {
+    background-color: $highlightedBackgroundColor;
+    color: $reverseTextColor;
+    border-left: $highlightedBorder;
+    .player-seed, .player-score, .player-name {
+        color: $reverseTextColor;
+    }
+  }
+  &:first-child {
+    border-bottom: $playerSeperatorBorder;
+  }
+}
