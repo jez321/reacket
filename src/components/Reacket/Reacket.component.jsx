@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import './reacket.styles.scss';
-import Round from '../round/round.component';
-import Connector from '../connector/connector.component';
-import RoundHeader from '../round-header/round-header.component';
+import './Reacket.styles.scss';
+import PropTypes from 'prop-types';
+import Round from '../Round/Round.component';
+import Connector from '../Connector/Connector.component';
+import RoundHeader from '../RoundHeader/RoundHeader.component';
 import HighlightContext from '../../context/HighlightContext';
 
-const Reacket = ({ data }) => {
+const Reacket = ({ matches }) => {
   const [highlightedPlayer, setHighlightedPlayer] = useState(null);
   const highlightContextValue = { highlightedPlayer, setHighlightedPlayer };
   const roundsObject = {};
-  data.match.forEach(match => {
+  matches.forEach((match) => {
     const { round } = match;
     if (!roundsObject[round]) {
       roundsObject[round] = { round, matches: [] };
@@ -23,28 +24,29 @@ const Reacket = ({ data }) => {
         {rounds.map((round) => {
           const jsx = [];
           jsx.push(
-            <RoundHeader round={round.round} totalRounds={rounds.length} />
+            <RoundHeader round={round.round} totalRounds={rounds.length} />,
           );
           return jsx;
         })}
       </div>
-      <HighlightContext.Provider value={ highlightContextValue }>
+      <HighlightContext.Provider value={highlightContextValue}>
         <div className="rounds">
           {rounds.map((round, index) => {
             const jsx = [];
+            const roundNumber = rounds.length - index;
             if (index > 0) {
               jsx.push(
-                <Connector key={`${index}-c`} round={rounds.length - index} />
+                <Connector key={`${roundNumber}-c`} round={roundNumber} />,
               );
             }
             jsx.push(
               <Round
-                key={`${index}-r`}
+                key={`${roundNumber}-r`}
                 firstRound={index === rounds.length - 1}
                 lastRound={index === 0}
                 matches={round.matches}
                 round={round.round}
-              />
+              />,
             );
             return jsx;
           })}
@@ -52,6 +54,22 @@ const Reacket = ({ data }) => {
       </HighlightContext.Provider>
     </div>
   );
+};
+
+Reacket.propTypes = {
+  matches: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    round: PropTypes.number.isRequired,
+    match: PropTypes.number.isRequired,
+    players: PropTypes.arrayOf(PropTypes.shape(
+      {
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        seed: PropTypes.number.isRequired,
+      },
+    )),
+    score: PropTypes.arrayOf(PropTypes.number.isRequired),
+  })).isRequired,
 };
 
 export default Reacket;
