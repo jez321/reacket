@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import TestUtil from '../../test/testUtil';
+import Match from '../Match/Match.component';
 import Round from './Round.component';
 
 const defaultProps = {
@@ -60,6 +61,11 @@ const setup = (props = {}, state = null) => {
 test('renders without error', () => {
   const wrapper = setup();
   expect(wrapper).toBeTruthy();
+});
+
+test('renders all matches', () => {
+  const wrapper = setup();
+  expect(wrapper.find(Match).length).toEqual(2);
 });
 
 test('does not throw warning with expected props', () => {
