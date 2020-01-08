@@ -1,24 +1,29 @@
 {
-  "name": "tournament-bracket",
-  "version": "0.1.0",
-  "private": true,
+  "name": "reacket",
+  "version": "0.1.1",
+  "private": false,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.2.1",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
     "react-scripts": "3.3.0"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish:npm": "rm -rf dist && mkdir dist &&  babel src/components -d dist --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
   },
   "browserslist": {
     "production": [
@@ -33,7 +38,11 @@
     ]
   },
   "devDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
     "check-prop-types": "^1.1.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
