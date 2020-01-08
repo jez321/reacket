@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import TestUtil from '../../test/testUtil';
 import Match from './Match.component';
+import Player from '../Player/Player.component';
 
 const defaultProps = {
   id: 1,
@@ -29,6 +30,11 @@ const setup = (props = {}, state = null) => {
 test('renders without error', () => {
   const wrapper = setup();
   expect(wrapper).toBeTruthy();
+});
+
+test('renders two players', () => {
+  const wrapper = setup();
+  expect(wrapper.find(Player).length).toEqual(2);
 });
 
 test('does not throw warning with expected props', () => {
