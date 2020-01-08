@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Connector.styles.scss';
 import Spacer from '../Spacer/Spacer.component';
-// round = first round = 1
+
 const Connector = ({ round }) => {
   const rightLines = 2 ** (round - 1);
   const leftLines = 2 ** round;
@@ -28,12 +28,12 @@ const Connector = ({ round }) => {
 
   return (
     <div className="connectors">
-      <div className="connector">
+      <div data-test="connector-left" className="connector">
         <Spacer key={`${round}-l-t`} />
         {leftElements}
         <Spacer key={`${round}-l-b`} />
       </div>
-      <div className="connector">
+      <div data-test="connector-right" className="connector">
         <Spacer key={`${round}-r-t`} />
         {rightElements}
         <Spacer key={`${round}-r-b`} />
