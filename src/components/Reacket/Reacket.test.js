@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import TestUtil from '../../test/testUtil';
 import Reacket from './Reacket.component';
+import Round from '../Round/Round.component';
+import RoundHeader from '../RoundHeader/RoundHeader.component';
 
 const matches = require('../../data/testData.json');
 
@@ -18,6 +20,12 @@ const setup = (props = {}, state = null) => {
 test('renders without error', () => {
   const wrapper = setup();
   expect(wrapper).toBeTruthy();
+});
+
+test('render correct number of rounds and round headers', () => {
+  const wrapper = setup();
+  expect(wrapper.find(RoundHeader).length).toEqual(3);
+  expect(wrapper.find(Round).length).toEqual(3);
 });
 
 test('does not throw warning with expected props', () => {
