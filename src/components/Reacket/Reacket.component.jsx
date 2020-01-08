@@ -5,19 +5,12 @@ import Round from '../Round/Round.component';
 import Connector from '../Connector/Connector.component';
 import RoundHeader from '../RoundHeader/RoundHeader.component';
 import HighlightContext from '../../context/HighlightContext';
+import convertMatchesToRounds from '../../util/convertMatchesToRounds';
 
 const Reacket = ({ matches }) => {
   const [highlightedPlayer, setHighlightedPlayer] = useState(null);
   const highlightContextValue = { highlightedPlayer, setHighlightedPlayer };
-  const roundsObject = {};
-  matches.forEach((match) => {
-    const { round } = match;
-    if (!roundsObject[round]) {
-      roundsObject[round] = { round, matches: [] };
-    }
-    roundsObject[round].matches.push(match);
-  });
-  const rounds = Object.values(roundsObject).sort((a, b) => a.round - b.round);
+  const rounds = convertMatchesToRounds(matches);
   return (
     <div className="reacket">
       <div className="round-headers">
