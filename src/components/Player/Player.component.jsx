@@ -14,9 +14,9 @@ const Player = ({
       title={`${name} ${winner ? '(W)' : '(L)'}`}
       className={`player ${winner ? 'winner' : ''} ${highlightedPlayer === id ? 'highlighted' : ''}`}
     >
-      <div className="player-seed">{seed}</div>
+      <div title="Seed" className="player-seed">{seed}</div>
       <div className="player-name">{name}</div>
-      <div className="player-score">{score}</div>
+      <div title="Score" className="player-score">{score}</div>
     </div>
   );
 };
