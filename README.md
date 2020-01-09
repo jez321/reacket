@@ -1,6 +1,7 @@
 # reacket
 
-> React single elimination tournament brackets
+React single elimination tournament brackets  
+Example https://jez321.github.io/reacket/
 
 ## Install
 
