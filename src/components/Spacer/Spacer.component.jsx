@@ -11,7 +11,12 @@ const Spacer = ({ line, height }) => {
       </div>,
     );
   }
-  return <>{spacers}</>;
+  return (
+    // eslint-disable-next-line react/jsx-fragments
+    <React.Fragment>
+      {spacers}
+    </React.Fragment>
+  );
 };
 
 Spacer.propTypes = {

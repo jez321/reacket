@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './Reacket.styles.scss';
+import './index.styles.scss';
 import PropTypes from 'prop-types';
-import Round from '../Round/Round.component';
-import Connector from '../Connector/Connector.component';
-import RoundHeader from '../RoundHeader/RoundHeader.component';
-import HighlightContext from '../../context/HighlightContext';
-import convertMatchesToRounds from '../../util/convertMatchesToRounds';
+import Round from './components/Round/Round.component';
+import Connector from './components/Connector/Connector.component';
+import RoundHeader from './components/RoundHeader/RoundHeader.component';
+import HighlightContext from './context/HighlightContext';
+import convertMatchesToRounds from './util/convertMatchesToRounds';
 
 const Reacket = ({ matches }) => {
   const [highlightedPlayer, setHighlightedPlayer] = useState(null);

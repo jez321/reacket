@@ -1,18 +1,62 @@
-# Reacket
+# reacket
 
-React single elimination tournament brackets
+> React single elimination tournament brackets
 
-## Getting Started
+## Install
 
-Clone the repository and install required packages.
-```
-npm install
+```bash
+npm install --save reacket
 ```
 
-Start up the development server to view the sample page on localhost:3000
+## Usage
+
+Prepare an array of matches in the following format:
 ```
-npm run start
+[
+  {
+    "id": 1,
+    "round": 1,
+    "match": 1,
+    "players": [
+      {
+        "id": 1,
+        "name": "Player 1 name",
+        "seed": 1
+      },
+      {
+        "id": 2,
+        "name": "Player 2 name",
+        "seed": 8
+      }
+    ],
+    "score": [
+      0,
+      1
+    ]
+  },
+...
+]
 ```
+At the moment, brackets should be full i.e. the number of matches in a round = 2^(Total rounds - Current round).  
+See data/testData.json for an example.
+
+```jsx
+import React from 'react'
+import Reacket from 'reacket'
+
+const Example = (matches) => (
+  <Reacket matches={matches} />
+)
+```
+
+## Example site
+
+```bash
+cd example
+npm start
+```
+Access localhost:3000 in your browser.
+
 ## License
 
-This project is licensed under the MIT License
+MIT © [jez321](https://github.com/jez321)

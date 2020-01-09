@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TestUtil from '../../test/testUtil';
-import Reacket from './Reacket.component';
-import Round from '../Round/Round.component';
-import RoundHeader from '../RoundHeader/RoundHeader.component';
+import TestUtil from './test/testUtil';
+import Reacket from './index';
+import Round from './components/Round/Round.component';
+import RoundHeader from './components/RoundHeader/RoundHeader.component';
 
-const matches = require('../../data/testData.json');
+const matches = require('./data/testData.json');
 
 const defaultProps = {
   matches,
