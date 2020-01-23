@@ -41,19 +41,19 @@ test('calls setHighlightedPlayer with correct id when mouseEntered', (done) => {
       done();
     },
   });
-  wrapper.find('.player').simulate('mouseEnter');
+  wrapper.find('.reacket-player').simulate('mouseEnter');
 });
 
 test('is not displayed as winner when winner is false', () => {
   const wrapper = setup();
-  expect(wrapper.find('.winner').exists()).toBeFalsy();
+  expect(wrapper.find('.reacket-winner').exists()).toBeFalsy();
 });
 
 test('is displayed as winner when winner is true', () => {
   const wrapper = setup({
     winner: true,
   });
-  expect(wrapper.find('.winner').exists()).toBeTruthy();
+  expect(wrapper.find('.reacket-winner').exists()).toBeTruthy();
 });
 
 test('does not throw warning with expected props', () => {

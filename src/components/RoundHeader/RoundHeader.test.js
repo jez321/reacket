@@ -24,7 +24,7 @@ test('renders correct rounder header for normal round', () => {
     round: 2,
     totalRounds: 5,
   });
-  expect(wrapper.find('.round-header').text()).toEqual('Round 2');
+  expect(wrapper.find('.reacket-round-header').text()).toEqual('Round 2');
 });
 
 test('renders correct rounder header for semi-finals', () => {
@@ -32,7 +32,7 @@ test('renders correct rounder header for semi-finals', () => {
     round: 4,
     totalRounds: 5,
   });
-  expect(wrapper.find('.round-header').text()).toEqual('Semi-finals');
+  expect(wrapper.find('.reacket-round-header').text()).toEqual('Semi-finals');
 });
 
 test('renders correct rounder header for finals', () => {
@@ -40,7 +40,7 @@ test('renders correct rounder header for finals', () => {
     round: 5,
     totalRounds: 5,
   });
-  expect(wrapper.find('.round-header').text()).toEqual('Finals');
+  expect(wrapper.find('.reacket-round-header').text()).toEqual('Finals');
 });
 
 test('does not throw warning with expected props', () => {
