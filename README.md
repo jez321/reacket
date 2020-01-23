@@ -42,13 +42,24 @@ At the moment, brackets should be full i.e. the number of matches in a round = 2
 See data/testData.json for an example.
 
 ```jsx
-import React from 'react'
-import Reacket from 'reacket'
+import React from 'react';
+import Reacket from 'reacket';
 
 const Example = (matches) => (
   <Reacket matches={matches} />
 )
 ```
+
+## Customizing the theme
+
+Override the appropriate css classes, making sure to import your theme after reacket.
+
+```jsx
+import Reacket from 'reacket';
+import './reacket.theme.css';
+```
+
+Refer to the example project for a sample custom theme implementation.
 
 ## Example site
 
