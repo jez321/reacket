@@ -1,13 +1,13 @@
-.connectors {
+.reacket-connectors {
   display: flex;
 }
-.connector {
+.reacket-connector {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 4rem;
 }
 
-.horizontal-line {
+.reacket-horizontal-line {
   border: solid 1px #ccc;
 }

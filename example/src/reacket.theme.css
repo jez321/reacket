@@ -1,0 +1,26 @@
+
+.reacket-player {
+  background-color: rgb(236, 236, 236);
+  border-left: none;
+  border-radius: 4px;
+}
+.reacket-player.reacket-highlighted {
+  background-color: rgb(123, 192, 253);
+  border-left: none;
+}
+.reacket-player:first-child {
+  border-bottom: solid 1px white;
+}
+.reacket-winner {
+  background-color: rgb(225, 241, 255);
+}
+.reacket-winner .reacket-player-name {
+  font-weight:bold;
+  color: #333;
+}
+.reacket-winner .reacket-player-score {
+  color: #333;
+}
+.reacket-highlighted.reacket-winner .reacket-player-score {
+  color: white;
+}

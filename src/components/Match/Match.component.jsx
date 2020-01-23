@@ -8,11 +8,11 @@ const Match = ({
 }) => {
   const winnerIdx = score[0] > score[1] ? 0 : 1;
   return (
-    <div className="match">
-      <div className="match-id">
+    <div className="reacket-match">
+      <div className="reacket-match-id">
         {id}
       </div>
-      <div className="players">
+      <div className="reacket-players">
         {players.map(({ name, seed, ...player }, index) => (
           <Player
             key={player.id}

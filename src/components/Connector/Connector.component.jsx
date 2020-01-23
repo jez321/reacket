@@ -14,7 +14,7 @@ const Connector = ({ round }) => {
     if (i > 0) {
       rightElements.push(<Spacer key={`${round}-${i}-s`} height={2} />);
     }
-    rightElements.push(<div key={`${round}-${i}-l`} className="horizontal-line" />);
+    rightElements.push(<div key={`${round}-${i}-l`} className="reacket-horizontal-line" />);
   }
 
   for (let i = 0; i < leftLines; i += 1) {
@@ -23,17 +23,17 @@ const Connector = ({ round }) => {
     } else if (i > 0) {
       leftElements.push(<Spacer key={`${round}-${i}-s`} height={2} />);
     }
-    leftElements.push(<div key={`${i}-l`} className="horizontal-line" />);
+    leftElements.push(<div key={`${i}-l`} className="reacket-horizontal-line" />);
   }
 
   return (
-    <div className="connectors">
-      <div data-test="connector-left" className="connector">
+    <div className="reacket-connectors">
+      <div data-test="connector-left" className="reacket-connector">
         <Spacer key={`${round}-l-t`} />
         {leftElements}
         <Spacer key={`${round}-l-b`} />
       </div>
-      <div data-test="connector-right" className="connector">
+      <div data-test="connector-right" className="reacket-connector">
         <Spacer key={`${round}-r-t`} />
         {rightElements}
         <Spacer key={`${round}-r-b`} />

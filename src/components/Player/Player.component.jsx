@@ -12,11 +12,13 @@ const Player = ({
       onMouseEnter={() => setHighlightedPlayer(id)}
       onMouseLeave={() => setHighlightedPlayer(null)}
       title={`${name} ${winner ? '(W)' : '(L)'}`}
-      className={`player ${winner ? 'winner' : ''} ${highlightedPlayer === id ? 'highlighted' : ''}`}
+      className={`reacket-player 
+        ${winner ? 'reacket-winner' : ''} 
+        ${highlightedPlayer === id ? 'reacket-highlighted' : ''}`}
     >
-      <div title="Seed" className="player-seed">{seed}</div>
-      <div className="player-name">{name}</div>
-      <div title="Score" className="player-score">{score}</div>
+      <div title="Seed" className="reacket-player-seed">{seed}</div>
+      <div className="reacket-player-name">{name}</div>
+      <div title="Score" className="reacket-player-score">{score}</div>
     </div>
   );
 };

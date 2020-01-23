@@ -23,7 +23,7 @@ const Round = ({
   if (!firstRound && !lastRound) {
     matchElements.push(<Spacer key={`${round}-ls`} />);
   }
-  return <div className="round">{matchElements}</div>;
+  return <div className="reacket-round">{matchElements}</div>;
 };
 
 Round.propTypes = {

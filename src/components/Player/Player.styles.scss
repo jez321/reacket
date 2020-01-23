@@ -12,7 +12,7 @@ $highlightedBorder:solid 0.2rem #1d8cd6;
 $playerSeperatorBorder: solid 1px #ccc;;
 
 
-.player {
+.reacket-player {
   padding: 0.5rem 0;
   background: $backgroundColor;
   border-left: $loserBorder;
@@ -21,7 +21,7 @@ $playerSeperatorBorder: solid 1px #ccc;;
   display: flex;
   justify-content: space-between;
 
-  .player-name {
+  .reacket-player-name {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -29,42 +29,41 @@ $playerSeperatorBorder: solid 1px #ccc;;
     flex:1 1 auto; 
     color: $lightTextColor;
   }
-  .player-seed, .player-score {
+  .reacket-player-seed, .reacket-player-score {
     flex:0 0 auto;
     padding: 0 1rem;
     color: $lightTextColor;
   }
 
-
-  &.winner {
-    background-color: $winnerBackgroundColor;
-    border-left: $winnerBorder;
-    .player-score {
-      font-weight:bold;
-      color: $winnerTextColor;
-    }
-    .player-name {
-      color: $darkTextColor;
-    }
-    &.highlighted {
-      .player-score {
-        color: $reverseWinnerTextColor;
-      }
-      .player-name {
-        color: $reverseTextColor;
-      }
-    }
-  }
-
-  &.highlighted {
+  &.reacket-highlighted {
     background-color: $highlightedBackgroundColor;
     color: $reverseTextColor;
     border-left: $highlightedBorder;
-    .player-seed, .player-score, .player-name {
+    .reacket-player-seed, .reacket-player-score, .reacket-player-name {
         color: $reverseTextColor;
     }
   }
   &:first-child {
     border-bottom: $playerSeperatorBorder;
+  }
+}
+
+.reacket-winner {
+  background-color: $winnerBackgroundColor;
+  border-left: $winnerBorder;
+  .reacket-player-score {
+    font-weight:bold;
+    color: $winnerTextColor;
+  }
+  .reacket-player-name {
+    color: $darkTextColor;
+  }
+  &.reacket-highlighted {
+    .reacket-player-score {
+      color: $reverseWinnerTextColor;
+    }
+    .reacket-player-name {
+      color: $reverseTextColor;
+    }
   }
 }

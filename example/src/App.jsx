@@ -1,6 +1,7 @@
 import React from 'react';
-import './App.styles.css';
 import Reacket from 'reacket';
+import './App.styles.css';
+import './reacket.theme.css';
 
 const matches = require('./data/testData.json');
 

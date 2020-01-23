@@ -11,8 +11,8 @@ const getRoundHeaderText = (round, totalRounds) => {
   return `Round ${round}`;
 };
 const RoundHeader = ({ round, totalRounds }) => (
-  <div className={`round-header 
-    ${round === totalRounds ? 'last-round' : ''}`}
+  <div className={`reacket-round-header 
+    ${round === totalRounds ? 'reacket-last-round' : ''}`}
   >
     {getRoundHeaderText(round, totalRounds)}
   </div>

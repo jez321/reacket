@@ -13,7 +13,7 @@ const Reacket = ({ matches }) => {
   const rounds = convertMatchesToRounds(matches);
   return (
     <div className="reacket">
-      <div className="round-headers">
+      <div className="reacket-round-headers">
         {rounds.map((round) => {
           const jsx = [];
           jsx.push(
@@ -23,7 +23,7 @@ const Reacket = ({ matches }) => {
         })}
       </div>
       <HighlightContext.Provider value={highlightContextValue}>
-        <div className="rounds">
+        <div className="reacket-rounds">
           {rounds.map((round, index) => {
             const jsx = [];
             const roundNumber = rounds.length - index;

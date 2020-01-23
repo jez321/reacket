@@ -1,8 +1,8 @@
-.match {
+.reacket-match {
   margin: 0.5rem 0;
   display: flex;
   flex-direction: row;
-  .match-id {
+  .reacket-match-id {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -10,7 +10,7 @@
     font-weight:bold;
     color: #999;
   }
-  .players {
+  .reacket-players {
     width: 20rem;
   }
 }

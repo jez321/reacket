@@ -6,7 +6,7 @@ const Spacer = ({ line, height }) => {
   const spacers = [];
   for (let i = 0; i < height; i += 1) {
     spacers.push(
-      <div key={i} className={`spacer ${line ? 'vertical-line' : ''}`}>
+      <div key={i} className={`reacket-spacer ${line ? 'reacket-vertical-line' : ''}`}>
         &nbsp;
       </div>,
     );
