@@ -1,6 +1,6 @@
 {
   "name": "reacket",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React single elimination tournament brackets",
   "author": "jez321",
   "license": "MIT",
