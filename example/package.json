@@ -11,7 +11,7 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "react-scripts": "^1.1.4"
   },
   "scripts": {
