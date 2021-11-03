@@ -69,6 +69,8 @@ npm start
 ```
 Access localhost:3000 in your browser.
 
+Note: If you get a hooks error when accessing the example site follow the steps in this StackOverflow answer. https://stackoverflow.com/a/65259365
+
 ## License
 
 MIT © [jez321](https://github.com/jez321)
